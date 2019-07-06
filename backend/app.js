@@ -1,7 +1,11 @@
 const express = require('express')
 const app = express()
-
 const webRoute = require('./routes/web')
+
+app.use(express.urlencoded());
+app.use(express.json());
+
+app.set('view engine', 'ejs');
 
 app.use('/',webRoute);
 
